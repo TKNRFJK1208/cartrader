@@ -1,5 +1,6 @@
 <script setup>
 const route = useRoute();
+const { toTitleCase } = useUtilities();
 useHead({
     title: `${route.params.make ? toTitleCase(route.params.make) : 'Car'} - in ${toTitleCase(route.params.city)}`,
 });
@@ -7,10 +8,6 @@ useHead({
 definePageMeta({
     layout: 'custom',
 });
-
-function toTitleCase(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
 </script>
 
 <template>
